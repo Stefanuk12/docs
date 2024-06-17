@@ -1,86 +1,162 @@
 ---
 title: 'Quickstart'
-description: 'Start building awesome documentation in under 5 minutes'
+description: 'Get your script ready in under 10 minutes'
 ---
 
-## Setup your development
+## Creating your account
 
-Learn how to update your docs locally and and deploy them to the public.
-
-### Edit and preview
+Luarmor works with an `invite code` system. This means that you can only create an account if you have an invite code. You can also buy invite codes for other people to use!
 
 <AccordionGroup>
-  <Accordion icon="github" title="Clone your docs locally">
-    During the onboarding process, we created a repository on your Github with
-    your docs content. You can find this repository on our
-    [dashboard](https://dashboard.mintlify.com). To clone the repository
-    locally, follow these
-    [instructions](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)
-    in your terminal.
+  <Accordion title="Getting an invite code">
+    Invite codes can be purchased from the main site [here](https://luarmor.net/#prices).
   </Accordion>
-  <Accordion icon="rectangle-terminal" title="Preview changes">
-    Previewing helps you make sure your changes look as intended. We built a
-    command line interface to render these changes locally. 1. Install the
-    [Mintlify CLI](https://www.npmjs.com/package/mintlify) to preview the
-    documentation changes locally with this command: ``` npm i -g mintlify ```
-    2. Run the following command at the root of your documentation (where
-    `mint.json` is): ``` mintlify dev ```
+  <Accordion title="Extending your membership">
+    Invite codes can also be used to extend your membership by an extra 30 days by redeeming an invite code on your [profile page](https://luarmor.net/profile).
+  </Accordion>
+  <Accordion title="Creating an account">
+    <Steps>
+      <Step title="Go to the site">
+        Go to the [registration page](https://luarmor.net/signup).
+      </Step>
+      <Step title="Enter your invite code">
+        Enter your invite code in the `Invite Code` field.
+      </Step>
+      <Step title="Fill in the form">
+        Fill in the rest of the form and click `Register`.
+
+        <Frame caption="Successful registration">
+          <img src="/images/create-step-1.png" alt="The screen you see after successfully registering"/>
+        </Frame>
+      </Step>
+      <Step title="Receive your login credential">
+        You will recieve your login credential (`API Key`) in your emails
+
+        <Frame caption="API key in email">
+          <img src="/images/create-step-2.png" alt="An email from Luarmor, showing the API key" />
+        </Frame>
+      </Step>
+      <Step title="Log in">
+        [Log in](https://luarmor.net/login) to your account and access the dashboard with your API Key.
+
+        <Frame caption="Successful log in">
+          <img src="/images/create-step-3.png" alt="The screen you see after successfully logging in" />
+        </Frame>
+      </Step>
+    </Steps>
   </Accordion>
 </AccordionGroup>
 
-### Deploy your changes
+## Creating a project
+
+Luarmor has a feature called **project folders**. They can contain multiple scripts, allowing you to have a **script hub** with multiple games in it.
 
 <AccordionGroup>
+  <Accordion title="Create a project">
+    A project can contain multiple scripts. You can create a project [here](https://luarmor.net/projects) by clicking `Create Project`.
 
-<Accordion icon="message-bot" title="Install our Github app">
-  Our Github app automatically deploys your changes to your docs site, so you
-  don't need to manage deployments yourself. You can find the link to install on
-  your [dashboard](https://dashboard.mintlify.com). Once the bot has been
-  successfully installed, there should be a check mark next to the commit hash
-  of the repo.
-</Accordion>
-<Accordion icon="rocket" title="Push your changes">
-  [Commit and push your changes to
-  Git](https://docs.github.com/en/get-started/using-git/pushing-commits-to-a-remote-repository#about-git-push)
-  for your changes to update in your docs site. If you push and don't see that
-  the Github app successfully deployed your changes, you can also manually
-  update your docs through our [dashboard](https://dashboard.mintlify.com).
-</Accordion>
+    <Frame caption="Luarmor dashboard">
+      <img src="/images/create-step-4.png" alt="An image showing the Luarmor dashboard with the mouse over the `Create Project` button" />
+    </Frame>
+  </Accordion>
+  <Accordion title="Enter project details">
+    Enter all of the details for the project including the name, webhooks, and configuring HWID resets.
 
+    <Frame caption="Project details all filled in">
+      <img src="/images/create-step-5.png" alt="An image showing all of the project details filled in" />
+    </Frame>
+  </Accordion>
 </AccordionGroup>
 
-## Update your docs
+## Uploading your script
 
-Add content directly in your files with MDX syntax and React components. You can use any of our components, or even build your own.
+All scripts live inside a project, to learn how to create one, please refer to the previous section.
 
-<CardGroup>
+<AccordionGroup>
+  <Accordion title="Upload your script to the project">
+    To start uploading a script, under the project you created, click `New Script`.
 
-<Card title="Style Your Docs" icon="paintbrush" href="/settings/global">
-  Add flair to your docs with personalized branding.
-</Card>
+    <Frame caption="The button to click that adds a script to the project">
+      <img src="/images/create-step-6.png" alt="The button to click that adds a script to the project" />
+    </Frame>
+  </Accordion>
+  <Accordion title="Enter script details">
+    After you click `New Script`, you will be prompted to enter the script details. Fill in all of the details, **upload your script**, and press the green tick in the top right.
+    
+    <Note>
+      Your screen may be too small and you may not be able to see the `Upload File` button. If this is the case, try to zoom out or use another computer / monitor.
+    </Note>
 
-<Card
-  title="Add API Endpoints"
-  icon="square-code"
-  href="/api-playground/configuration"
->
-  Implement your OpenAPI spec and enable API user interaction.
-</Card>
+    <Frame caption="Entering all of the script details">
+      <img src="/images/create-step-7.png" alt="An image with all of the script details filled in" />
+    </Frame>
+  </Accordion>
+</AccordionGroup>
 
-<Card
-  title="Integrate Analytics"
-  icon="chart-mixed"
-  href="/analytics/supported-integrations"
->
-  Draw insights from user interactions with your documentation.
-</Card>
+## Distributing your script
 
-<Card
-  title="Host on a Custom Domain"
-  icon="browser"
-  href="/settings/custom-domain/subdomain"
->
-  Keep your docs on your own website's subdomain.
-</Card>
+After you have uploaded your script, you can now download the loader script and start whitelisting users.
 
-</CardGroup>
+<AccordionGroup>
+  <Accordion title="Download the loader">
+    <Warning>
+      Please use the Luarmor loadstring to ensure your script is always up to date. Uploading the contents of the loadstring and using that instead will cause an error!
+    </Warning>
+
+    Download the loader script by clicking the `Loader` button.
+
+    <Frame caption="Highlighted button that downloads the loader">
+      <img src="/images/create-step-8.png" alt="An image with the red box around the download 'Loader' button"/>
+    </Frame>
+  </Accordion>
+  <Accordion title="Create whitelist keys">
+    Generate an empty key on the [user](https://luarmor.net/users) area and give it to the user. Alternatively, you can mass-generate keys and put them to your [Sellix](https://sellix.io) / [Shoppy](https://shoppy.gg) as `serials` for automated purchases. 
+  
+    <CardGroup>
+      <Frame caption="Mass generate keys">
+        <img src="/images/create-step-9.png" alt="The screen that lets you pass generate keys" />
+      </Frame>
+
+      <Frame caption="Upload keys to Sellix">
+        <img src="/images/whitelist-key-sellix.gif" alt="A gif showing uploading keys to Sellix"/>
+      </Frame>
+    </CardGroup>
+  </Accordion>
+</AccordionGroup>
+
+## Mass import / export users
+
+<AccordionGroup>
+  <Accordion title="Import">
+    To import all your users, it's recommended to use the JSON format when exporting.
+
+    <Steps>
+      <Step title="Go to your project settings">
+        Go to your project settings by clicking the gear icon next to the project in the [user dashboard](https://luarmor.net/users)
+
+        <Frame caption="Gear icon highlighted">
+          <img src="/images/project-gear-icon.png" alt="The gear icon highlighted next to the project on the user dashboard" />
+        </Frame>
+      </Step>
+      <Step title="Import">
+        Press `Import JSON` and paste the JSON file you exported earlier.
+
+        <Frame caption="Import JSON button">
+          <img src="/images/project-import-users.png" alt="The import JSON button highlighted" />
+        </Frame>
+      </Step>
+    </Steps>
+  </Accordion>
+  <Accordion title="Export">
+    You can export all your users to either a TXT file or JSON file. For images, see the import section.
+  
+    <Steps>
+      <Step title="Go to your project settings">
+        Go to your project settings by clicking the gear icon next to the project in the [user dashboard](https://luarmor.net/users)
+      </Step>
+      <Step title="Download">
+        Press either `Download TXT` or `Export JSON`. To import later, it's recommended to use `Export JSON`.
+      </Step>
+    </Steps>
+  </Accordion>
+</AccordionGroup>

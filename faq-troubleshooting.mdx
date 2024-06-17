@@ -1,0 +1,61 @@
+---
+title: 'FAQ and Troubleshooting'
+---
+
+When using Luarmor, you may come across some errors or issues. This page will help you troubleshoot and solve common problems. If your issue is not listed here, please contact our support team.
+
+## Uploading scripts
+
+<AccordionGroup>
+    <Accordion title="Luau is not fully supported">
+        Luraph, and therefore, Luarmor does not fully support Luau. Therefore, you must remove some Luau features from your script before uploading it to Luarmor. This includes:
+        - any types
+        - inline ternary via `if` statement:
+        ```lua
+        -- this does not work
+        local maxValue = if value > 10 then 10 else value end
+
+        -- instead, use:
+        local maxValue
+        if value > 10 then
+            maxValue = 10
+        else
+            maxValue = value
+        end
+        ```
+    </Accordion>
+</AccordionGroup>
+
+## Running scripts
+
+<AccordionGroup>
+    <Accordion title="attempt to index thread with 'Send'">
+        This happens due to a bad websocket implementation within the exploit that is being used. To fix this, either:
+        - use a different executor
+        - ask the script owner to disable the "Heartbeat" feature in their script
+    </Accordion>
+</AccordionGroup>
+
+
+## Discord bot
+
+<AccordionGroup>
+
+</AccordionGroup>
+
+
+## Verification
+
+<AccordionGroup>
+    <Accordion title="Rejection">
+        If your script got rejected, it is becuase it did not meet the [rules and limitations](./scripting/verification#rules-and-limitations). Please either:
+        - fix the issues and resubmit
+        - disable `Verification` for the script
+    </Accordion>
+</AccordionGroup>
+
+## Miscellaneous
+
+<AccordionGroup>
+
+</AccordionGroup>

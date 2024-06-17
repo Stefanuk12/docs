@@ -1,0 +1,40 @@
+---
+title: Macros
+---
+
+Luarmor uses [Luraph™️](https://luraph.com) as the obfuscation provider, so their macros can also be used with Luarmor - along with Luarmor macros.
+
+<Note>
+    For more information on what a `constant function` is and is not, view [this](./optimisation#how-to-use-lph-no-virtualize).
+</Note>
+
+<AccordionGroup>
+    <Accordion title="LRM_INIT_SCRIPT">
+        This macro allows you to run a piece of code before your script is ran. It accepts a **constant** function.
+
+        <Check>
+            Good usage:
+            ```lua
+            LRM_INIT_SCRIPT(function()
+                print("Hello, world!")
+            end)
+            ```
+        </Check>
+
+        <Warning>
+            Bad usage:
+            ```lua
+            LRM_INIT_SCRIPT(print("Hello, world!"))
+            ```
+            ```lua
+            LRM_INIT_SCRIPT("print('Hello, world!')")
+            ```
+            ```lua
+            local function init()
+                print("Hello, world!")
+            end
+            LRM_INIT_SCRIPT(init)
+            ```
+        </Warning>
+    </Accordion>
+</AccordionGroup>

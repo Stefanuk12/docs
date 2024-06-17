@@ -1,0 +1,145 @@
+---
+title: "Discord Bot"
+description: "A Discord bot that manages your script"
+---
+
+## Introduction
+
+Luarmor also has a Discord bot ready for you to invite to your server. The bot allows you to manage your script, whitelist users, and more. It also allows users to manage their key.
+
+## Inviting the bot
+
+<Warning>
+    After inviting the bot, you must run `/login [API KEY]` within the first 15 minutes, otherwise bot will automatically leave the server.
+
+    <Frame caption="/login command">
+        <img src="/images/discord-login-command.png" alt="An image showing the login slash command" />
+    </Frame>
+</Warning>
+
+You can view all of the discord bot invite links [here](https://luarmor.net/bot), each one is identical. The reason for having many bots is because Discord limits the amount of servers a bot can be in.
+
+## Setting up permissions
+
+<AccordionGroup>
+    <Accordion title="Manager role">
+        People with manager role can run basic management command like [/whitelist](#whitelist) and [/force-resethwid](#force-resethwid). This role will be used in the next section.
+    </Accordion>
+
+    <Accordion title="Buyer role">
+        <Note>
+            This is optional.
+        </Note>
+
+        This role is automatically assigned to users when:
+        - a manager whitelists them
+        - user redeems a key via the [panel](#create-a-panel)
+        - user gets their role via the [panel](#create-a-panel)
+
+        It gives them access to the script via the [panel](#create-a-panel) and the ability to reset their HWID. This role may be used in the next section.
+    </Accordion>
+</AccordionGroup>
+
+## Create a panel
+
+<Warning>
+    You can only have one panel / one loader script per server.
+</Warning>
+
+<AccordionGroup>
+    <Accordion title="Creating the loader script">
+        <Warning>
+            Do not make your loader script too long. Discord has a limit on the size of files that can be sent. An alternative is to redirect your users to a `#script` channel where you can upload the entire script manually and make the `loader_script` point to that channel.
+        </Warning>
+
+        This is the script users will recieve when they press "Get Script" on the panel, which will be configured in the next step.
+
+        <Frame caption="An example loader script">
+            <img src="/images/example-loader-script.png" alt="A notepad file showing the example loader script which only contains the Luarmor loadstring"/>
+        </Frame>
+    </Accordion>
+
+    <Accordion title="Creating the panel">
+        The panel creation is all handled through the `/setpanel` command which creates a new panel in the current channel. It must be given a `loader_script` and a `manager_role`, but optionally can also be given a `buyer_role`.
+    
+        <Frame caption="An example panel">
+            <img src="/images/example-panel.png" alt="An image showing the panel in Discord" />
+        </Frame>
+    </Accordion>
+</AccordionGroup>
+
+## Whitelisting users
+
+<Note>
+    If `days` is not specified, then the user will be whitelisted indefinitely.
+</Note>
+
+Users can be whitelisted and unwhitelisted through the `/whitelist` and `/unwhitelist` commands by [managers](#manager-role).
+
+<Accordion title="Mass whitelist">
+    If you already have users with a specific role, you can easily mass whitelist every single one of them with one command. This is done through the `/mass-whitelist` command, which asks for the `role` and, optionally, the number of `days`.
+
+    <Warning>
+        `Total failed` means their discord IDs are already registered, so in order to avoid duplicated entries, it will skip them.
+    </Warning>
+
+    <CardGroup cols={3}>
+        <Frame caption="List of users in Discord">
+            <img src="/images/discord-user-list.png" alt="An image showing the list of users in Discord" />
+        </Frame>
+
+        <Frame caption="Mass whitelist command">
+            <img src="/images/discord-mass-whitelist-command.png" alt="An image showing the mass whitelist command in Discord" />
+        </Frame>
+
+        <Frame caption="Mass whitelist result">
+            <img src="/images/discord-mass-whitelist-result.png" alt="An image showing the result of the mass whitelist command in Discord" />
+        </Frame>
+    </CardGroup>
+</Accordion>
+
+## Luarmor logs
+
+You can setup logs via [Discord webhooks](https://support.discord.com/hc/en-us/articles/228383668-Intro-to-Webhooks). This is done through the `/setlogs` command. This will log all Discord Luarmor command and button usage.
+
+## Manager commands
+
+All of the following commands can only be ran by people with the [manager role](#manager-role).
+
+<AccordionGroup>
+    <Accordion title="/blacklist">
+        <Note>
+            If `days` is not provided, then the user will be blacklisted indefinitely.
+        </Note>
+
+        This command blacklists a specific Discord user from the project. You can optionally give a reason to show to the user and the amount of days.
+    </Accordion>
+    <Accordion title="/compensate">
+        This command add a specified amount of days to everyone's keys in the project. Example usage of this command may be when your script was patched and you want to compensate your users.
+    </Accordion>
+    <Accordion title="/force-resethwid">
+        <Note>
+            This ignores any cooldowns you have set.
+        </Note>
+
+        This command resets the HWID of a specific user.
+    </Accordion>
+    <Accordion title="/login">
+        This has been covered [here](#inviting-the-bot).
+    </Accordion>
+    <Accordion title="/logout">
+        This command logs out the bot from the server.
+    </Accordion>
+    <Accordion title="/mass-whitelist">
+        This has been covered [here](#whitelisting-users).
+    </Accordion>
+    <Accordion title="/setlogs">
+        This has been covered [here](#luarmor-logs).
+    </Accordion>
+    <Accordion title="/unwhitelist">
+        This has been covered [here](#whitelisting-users).
+    </Accordion>
+    <Accordion title="/whitelist">
+        This has been covered [here](#whitelisting-users).
+    </Accordion>
+</AccordionGroup>

@@ -1,0 +1,92 @@
+---
+title: 'Verification'
+description: 'This page explains what "verified" Luarmor scripts are. This feature is optional, and you do not have to opt-in as a script developer.'
+---
+
+## For script developers
+
+<Warning>
+    Once you enable Verified mode, you can not turn it off due to safety reasons.
+
+    A reason for this is because if your Luarmor account gets hacked, bad actors **will not **be able to replace your already existing script to a malicious one without approval.
+</Warning>
+
+**Verified** scripts require manual approval by Luarmor owner (Federal). The **source code will be reviewed** by the Luarmor owner and deleted from our systems after obfuscation. 
+
+**Your data will be anonymized** and the reviewer will not see who submitted the script.
+
+The verification process usually takes less than 30 minutes depending on queue size and availability of the admin. In some cases, it might take up to 12-24 hours due to timezone differences or other reasons. You can check how long it will take on dashboard while creating/editing a script.
+
+This will ensure that script does not contain any malware or potentially dangerous code.
+
+### Rules & Limitations
+
+<Note>
+    New rules / limitations can be added anytime without notification. Existing rules will not be removed.
+</Note>
+
+<AccordionGroup>
+    <Accordion title="Making requests to unknown external URLs">
+        You are not allowed to make requests to unknown external URLs. This includes but is not limited to:
+        - `ip-api.com`
+        - `whatismyip.com`
+        - any other site that could be used to obtain information about the client.
+    </Accordion>
+    <Accordion title="Sending sensitive user information to webhooks / URLs">
+        You are not allowed to send IP addresses / cookies of your users to webhooks or other URLs. You can still send other stuff like in-game stats, usernames, etc., as long as they are not sensitive.
+    </Accordion>
+    <Accordion title="Code loading">
+        You will not be able to use `loadstring` or any similar mechanism (e.g., a Lua VM, `require`) with external & unpredictable sources like Pastebin, GitHub, or any other URL.
+        
+        Keep in mind that **you can still use these functions** if you are loading the code from a local source (e.g., `readfile`, in-game modules) or a string that's hard coded in your script. In some cases, public & known libraries will be allowed through URLs.
+    </Accordion>
+    <Accordion title="Creating & writing files">
+        You are allowed to write or create files as long as their content is not retrieved from an external & unpredictable source. Also, file content must not be malicious or remotely changeable.
+    </Accordion>
+    <Accordion title="Potentially malicious code">
+        You are not allowed to abuse vulnerabilities within the platform to gain unauthorized access outside of the Luau sandbox. This includes but is not limited to:
+        - ACE/RCEs
+        - PC username grabbers
+        - Browser URL openers
+        - RATs
+        - Token loggers
+    </Accordion>
+    <Accordion title="Stealers">
+        Any type of stealers are not allowed in Verified scripts. This includes but is not limited to:
+        - Pet stealers
+        - Gem stealers
+        - Auto traders
+        - Robux stealers
+        - Cookie stealers
+    </Accordion>
+    <Accordion title="Obfuscated behavior">
+        If your script contains obfuscated or unpredictable code (e.g., accessing functions through runtime-generated names via `getfenv`, `_G`, `getrenv`, or similar environment functions/tables, obfuscated code, encrypted strings), your submission will be rejected.
+    </Accordion>
+</AccordionGroup>
+
+## For script users
+
+<Warning>
+    Keep in mind that **verified scripts** do not guarantee quality, we do not test the script in game. We only check it for malwares or loggers. Once they are confirmed to be free of malware, they get published.
+</Warning>
+
+If a script is "verified", it means it has been reviewed by a human before publishing, and does not contain malicious code.
+
+### Checking if a script is verified
+
+<AccordionGroup>
+    <Accordion title="Through the site">
+        You can check if a script is verified through our [Script Checker](https://luarmor.net/check) page. Copy and paste the script ID into search bar and you will see certain security features of the script if it has been verified.
+    
+        <Frame caption="The script ID within the loadstring">
+            <img src="/images/verification-script-id.avif" alt="The script ID within the loadstring" />
+        </Frame>
+    </Accordion>
+    <Accordion title="Through the loadstring URL">
+        You can **also** check if loader URL has `/verified/` in it. If you see it, it means that script is a legitimate loader verified by Luarmor. **If you don't see it**, you can still lookup its ID on check page just to make sure.
+    
+        <Frame caption="`/verified/` inside the URL for the loadstring">
+            <img src="/images/verification-loadstring.avif" alt="`/verified/` inside the URL for the loadstring" />
+        </Frame>
+    </Accordion>
+</AccordionGroup>

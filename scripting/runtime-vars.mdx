@@ -1,0 +1,38 @@
+---
+title: Runtime Variables
+---
+
+Luarmor has runtime variables that allows you to access to user details such as Discord ID, total executions, script name, premium, user note, etc..
+
+<Warning>
+    Luarmor does not protect these runtime variables and they can be hooked and modified maliciously. Make sure to add your own protections, if needed.
+</Warning>
+
+They can be used for a lot of things. Check out this example:
+<Frame caption="An example script using runtime variables">
+    <img src="/images/runtime-vars-example.png" alt="An example script using runtime variables" />
+</Frame>
+
+## Every runtime variable
+You can see a full list of runtime variables here:
+
+<AccordionGroup>
+    <Accordion title="LRM_IsUserPremium">
+        A `boolean` indicating if the user is premium or not. This is useful for FFA scripts ('freemium').
+    </Accordion>
+    <Accordion title="LRM_LinkedDiscordID">
+        The linked Discord ID of the user.
+    </Accordion>
+    <Accordion title="LRM_ScriptName">
+        The name of the current script.
+    </Accordion>
+    <Accordion title="LRM_TotalExecutions">
+        The total executions of the user. It will be `0` by default.
+    </Accordion>
+    <Accordion title="LRM_SecondsLeft">
+        The seconds left until expiry. It will be `math.huge` if `auth_expire` isn't set.
+    </Accordion>
+    <Accordion title="LRM_UserNote">
+        The user note. It will be `Not specified` by default.
+    </Accordion>
+</AccordionGroup>
