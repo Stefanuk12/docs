@@ -114,4 +114,26 @@ When using Luarmor, you may come across some errors or issues. This page will he
             </Step>
         </Steps>
     </Accordion>
+    <Accordion title="I want to add support for my executor">
+        <Steps>
+            <Step title="Follow UNC">
+                Follow the [UNC for the request function](https://github.com/unified-naming-convention/NamingStandard/blob/main/api/misc.md#headers), including headers.
+            </Step>
+            <Step title="Additional headers">
+                You must also add the following headers:
+                - `roblox-session-id` - `game.JobId`
+                - `roblox-game-id` - `game.PlaceId`
+            </Step>
+            <Step title="Run compatibility script">
+                <Note>
+                    WebSocket support is optional but recommended.
+                </Note>
+
+                Run [this script](https://github.com/Gork3m/RobloxStuff/blob/main/luarmor_compatibility_test.lua) and make sure everything is successful.
+            </Step>
+            <Step title="Report the results to us">
+                The previous step should have copied the result to your clipboard. Paste this in a ticket in the [Discord server](https://discord.gg/luarmor) and we will review it.
+            </Step>
+        </Steps>
+    </Accordion>
 </AccordionGroup>
