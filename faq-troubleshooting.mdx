@@ -8,7 +8,7 @@ When using Luarmor, you may come across some errors or issues. This page will he
 
 <AccordionGroup>
     <Accordion title="Luau is not fully supported">
-        Luraph, and therefore, Luarmor does not fully support Luau. Therefore, you must remove some Luau features from your script before uploading it to Luarmor. This includes:
+        While Luraph supports Luau fully, Luarmor does not. Therefore, you must remove some Luau features from your script before uploading it to Luarmor. This includes:
         - any types
         - inline ternary via `if` statement:
         ```lua
@@ -23,6 +23,8 @@ When using Luarmor, you may come across some errors or issues. This page will he
             maxValue = value
         end
         ```
+
+        For more information, view the Luau docs [here](https://luau-lang.org/syntax).
     </Accordion>
     <Accordion title="The line count isn't making sense / matching up">
         Luarmor adds its own code before obfuscation which changes the line count. Therefore the line count is not accurate and unreliable.
