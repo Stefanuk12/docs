@@ -122,10 +122,14 @@ When using Luarmor, you may come across some errors or issues. This page will he
     <Accordion title="I want to add support for my executor">
         <Steps>
             <Step title="Follow UNC">
-                Follow the [UNC for the request function](https://github.com/unified-naming-convention/NamingStandard/blob/main/api/misc.md#headers), including headers.
+                <Note>
+                    For `game:HttpGet`, the `User-Agent` must be `Roblox/WinInet`. While for `request`, the `User-Agent` must be your exploit name and version like `Exploit/Version`. If you are an Android executor, it should be `Exploit Android/Version`.
+                </Note>
+
+                Follow the [UNC for the request function](https://github.com/unified-naming-convention/NamingStandard/blob/main/api/misc.md#headers), including headers. Follow the [UNC for identifyexecutor too](https://github.com/unified-naming-convention/NamingStandard/blob/main/api/misc.md#identifyexecutor)
             </Step>
             <Step title="Additional headers">
-                You must also add the following headers:
+                You must also add the following headers for both `request` and `game:HttpGet`:
                 - `roblox-session-id` - `game.JobId`
                 - `roblox-game-id` - `game.JobId`
             </Step>
