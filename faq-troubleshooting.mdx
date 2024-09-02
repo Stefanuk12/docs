@@ -122,16 +122,20 @@ When using Luarmor, you may come across some errors or issues. This page will he
     <Accordion title="I want to add support for my executor">
         <Steps>
             <Step title="Follow UNC">
-                <Note>
-                    For `game:HttpGet`, the `User-Agent` must be `Roblox/WinInet`. While for `request`, the `User-Agent` must be your exploit name and version like `Exploit/Version`. If you are an Android executor, it should be `Exploit Android/Version`.
-                </Note>
-
-                Follow the [UNC for the request function](https://github.com/unified-naming-convention/NamingStandard/blob/main/api/misc.md#headers), including headers. Follow the [UNC for identifyexecutor too](https://github.com/unified-naming-convention/NamingStandard/blob/main/api/misc.md#identifyexecutor)
+                - Follow the [UNC for the request function](https://github.com/unified-naming-convention/NamingStandard/blob/main/api/misc.md#headers), including headers.
+                - Follow the [UNC for identifyexecutor too](https://github.com/unified-naming-convention/NamingStandard/blob/main/api/misc.md#identifyexecutor)
             </Step>
-            <Step title="Additional headers">
-                You must also add the following headers for both `request` and `game:HttpGet`:
-                - `roblox-session-id` - `game.JobId`
-                - `roblox-game-id` - `game.JobId`
+            <Step title="Headers">
+                <Accordion title="For game:HttpGet">
+                    - `User-Agent` = `Roblox/WinInet`
+                    - `Roblox-Game-Id` = `game.JobId`
+                    - `Roblox-Session-Id` = `{"GameId": game.JobId, ...}` (as JSON string)
+                </Accordion>
+                <Accordion title="For request">
+                    - `User-Agent` = `Exploit/Version` or `Exploit Android/Version` or whatever you want, you must let us know first so we can whitelist it
+                    - `Roblox-Game-Id` = `game.JobId`
+                    - `Roblox-Session-Id` = `{"GameId": game.JobId, ...}` (as JSON string)
+                </Accordion>
             </Step>
             <Step title="Run compatibility script">
                 <Note>
@@ -144,7 +148,7 @@ When using Luarmor, you may come across some errors or issues. This page will he
                 <Warning>
                     If the script fails at any point, make sure to check F9 and report that too.
                 </Warning>
-                The previous step should have copied the result to your clipboard. Paste this in a ticket in the [Discord server](https://discord.gg/luarmor) and we will review it.
+                The previous step should have copied the result to your clipboard. Paste this in a **support** ticket in the [Discord server](https://discord.gg/luarmor) and we will review it.
             </Step>
         </Steps>
     </Accordion>
