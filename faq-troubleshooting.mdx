@@ -25,6 +25,27 @@ When using Luarmor, you may come across some errors or issues. This page will he
         ```
 
         For more information, view the Luau docs [here](https://luau-lang.org/syntax).
+
+        <Accordion title="Automatically support via darklua">
+            <Steps>
+                <Step title="Go to the playground">
+                    A web version of darklua can be accessed [here](https://darklua.com/try-it/?configuration=%7B%22rules%22%3A%5B%22remove_comments%22%2C%22remove_interpolated_string%22%2C%22remove_types%22%2C%22remove_compound_assignment%22%5D%7D).
+                </Step>
+                <Step title="Paste your code">
+                    Paste your code into the left box.
+                </Step>
+                <Step title="Press the format button">
+                    To ensure everything worked, press the "Configure" button, then press the "format" button on the left panel
+                </Step>
+                <Step title="Copy the code">
+                    <Note>
+                        Press `CTRL + A` to select all, then `CTRL + C` to copy, instead of manually selecting the code.
+                    </Note>
+
+                    Copy the code from the right box and paste it into Luarmor.
+                </Step>
+            </Steps>
+        </Accordion>
     </Accordion>
     <Accordion title="The line count isn't making sense / matching up">
         Luarmor adds its own code before obfuscation which changes the line count. Therefore the line count is not accurate and unreliable.
